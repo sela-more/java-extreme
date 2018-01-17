@@ -1,0 +1,68 @@
+package threadPool;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class Manager implements IManagerToWorker,IClientManager
+{
+    private ExecutorService m_Workers     = null;
+    private JobContainer m_Jobs          = null;
+    private int m_nNumOfWorkers;
+ 
+    public Manager(int workers)
+    {
+        m_Workers 	 		= Executors.newFixedThreadPool(workers);
+        m_Jobs  			= new JobContainer();
+        createWorkers();
+    }
+ 
+     public Manager()
+    {
+    	 this(5);
+    }
+
+     public void createWorkers()
+     {
+    	 List<Worker> workers = new ArrayList<Worker>();
+         for (int i=0;i<m_nNumOfWorkers;i++)
+         {
+             Worker worker = new Worker(this);
+             workers.add(worker);
+         }
+         m_Workers.invokeAll(workers);
+     } 
+      //implemantion of IManager 
+     public void addJob(Job job)
+     {
+         synchronized(m_Jobs)
+         {
+             m_Jobs.addJob(job);
+         }
+         try
+         {
+             synchronized(m_Jobs)
+             {
+                 m_Jobs.notify();
+             }
+         }
+         catch (Exception e)
+         {
+             System.err.println(e);
+         }
+     }
+     
+     public Job getJob()
+     {
+         synchronized(m_Workers)
+         {
+             return m_Jobs.getJob();
+         }
+     }
+  
+     public void work(String jobStr)
+     {
+         System.out.println(jobStr);
+     } 
+ }

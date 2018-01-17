@@ -1,0 +1,18 @@
+
+public class Driver2 {
+
+	public static void main(String[] args) throws IOException {
+		RandomAccessFile raf = new RandomAccessFile ("somefile", "rw");
+		FileChannel fc = raf.getChannel( );
+		ByteBuffer bb = ByteBuffer.allocate(100);
+		String s = "hello world";
+		ByteBuffer bbb = ByteBuffer.allocate(100);
+		String ss = "hello world2";
+		Charset charset = Charset.forName("ISO-8859-1");
+		bbb = charset.encode(ss);
+		bb = charset.encode(s);
+		fc.write(bb);
+		fc.write(bbb);
+		fc.close();
+
+}

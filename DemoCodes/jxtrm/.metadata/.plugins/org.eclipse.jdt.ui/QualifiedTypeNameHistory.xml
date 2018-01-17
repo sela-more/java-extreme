@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cache.Cacheable"/>
+<fullyQualifiedTypeName name="cache.CacheObject"/>
+<fullyQualifiedTypeName name="java.lang.ref.SoftReference"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.ref.ReferenceQueue"/>
+<fullyQualifiedTypeName name="cache.CacheMgr.CacheObject"/>
+<fullyQualifiedTypeName name="java.lang.ref.PhantomReference"/>
+<fullyQualifiedTypeName name="cache.Student"/>
+<fullyQualifiedTypeName name="cache.CacheMgr"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.lang.ref.WeakReference"/>
+<fullyQualifiedTypeName name="cache.LogMgr"/>
+<fullyQualifiedTypeName name="cache.LogObject"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="exchanger.Tester"/>
+<fullyQualifiedTypeName name="exchanger.Exchanger"/>
+<fullyQualifiedTypeName name="java.lang.instrument.Instrumentation"/>
+</qualifiedTypeNameHistroy>

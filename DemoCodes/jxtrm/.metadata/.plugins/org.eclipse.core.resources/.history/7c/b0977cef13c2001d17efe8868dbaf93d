@@ -1,0 +1,11 @@
+package cache;
+
+import java.lang.ref.WeakReference;
+import java.util.Map;
+
+public class LogMgr {
+
+	List<String, WeakReference<Student>> logger;
+	
+	public 
+}

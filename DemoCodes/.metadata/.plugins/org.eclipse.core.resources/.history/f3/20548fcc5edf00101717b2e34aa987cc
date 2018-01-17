@@ -1,0 +1,77 @@
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import java.io.FileInputStream;
+ 
+class MyClassLoader extends ClassLoader
+{
+	private Map m_Classes;
+	//The super ctor is protected
+	public MyClassLoader() 
+	{
+		m_Classes = new HashMap<K, V>();
+	} 
+	
+	byte[] getMyClass(String sClassName)
+	{
+		 System.out.println("Loading Class...");
+		 byte bResult[] = null;
+	    try {
+		   FileInputStream fis = new
+	                FileInputStream(sClassName + ".didi");
+		   bResult = new byte[fis.available()];
+		   fis.read(bResult);
+		 }
+		 catch(Exception e){ //any exception {	
+		   System.err.println("Error loading class!");
+	  	   bResult = null;	
+	  }
+		return bResult;		
+	}
+
+	public Class loadClass(String sName) throws ClassNotFoundException
+	{	return loadClass(sName, true); }
+	public synchronized Class loadClass
+	            (String sName, boolean bResolve)
+	             throws ClassNotFoundException
+	{
+		System.out.println("Looking for class " +
+	                                       sName);
+		Class cResult = null;
+		byte bClassData[] = null;
+		cResult = (Class)m_Classes.get(sName); 	
+	    if (cResult != null)
+		{
+		  System.out.println("Class is already in memory!");
+		  System.out.println("Returning cached class");
+		  return cResult;
+	}
+	    
+	  //Is it a system class?
+	    try {
+	    	cResult = super.findSystemClass(sName);
+	    	//If an exception was not thrown, 
+	        //this is a system class
+	    	System.out.println("This is a system class");
+	    	return cResult;
+	    }
+	    catch (ClassNotFoundException e)
+	    {
+	       System.out.println("This is not a system class");
+	    }
+	    //Try to get the class using out methods....
+	    bClassData = getMyClass(sName);
+	    if (bClassData == null) //couldn't find it
+	  	 throw new ClassNotFoundException();
+	    //Parse the data to create a class
+	    cResult = defineClass(null, bClassData, 0,
+	                            bClassData.length);
+	    if (cResult == null)
+	  	 throw new ClassFormatError();
+	    if (bResolve)
+	  	 resolveClass(cResult);
+	    m_Classes.put(sName, cResult);
+	    System.out.println("Class was loaded");
+	    return cResult;
+	   }//End of method
+	  }//End of class

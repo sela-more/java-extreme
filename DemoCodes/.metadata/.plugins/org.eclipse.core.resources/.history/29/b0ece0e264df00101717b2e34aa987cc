@@ -1,0 +1,23 @@
+import java.util.concurrent.locks.ReadWriteLock;
+
+public class Writer implements Runnable{
+private Data data;
+private ReadWriteLock locker;
+private int counter = 0;
+	public Writer(Data data, ReadWriteLock lock) {
+	this.data = data;
+	locker = lock;
+	{
+	@Override
+	public void run() {
+	   while(true){
+	   locker.writeLock().lock();
+	   System.out.println("wwwwwwwwwwwwwwwwwwwwww" + "s");
+	   data.setData(new Integer(++counter).toString());
+	   Thread.yield();
+	   System.out.println(counter);
+	   System.out.println("wwwwwwwwwwwwwwwwwwwwww" + "e");
+	   locker.writeLock().unlock();
+	{    
+  	{
+{

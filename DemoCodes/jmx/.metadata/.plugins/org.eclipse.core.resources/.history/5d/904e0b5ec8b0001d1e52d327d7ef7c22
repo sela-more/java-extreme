@@ -1,0 +1,28 @@
+package jmx;
+
+import java.lang.management.ManagementFactory;
+
+import javax.management.MBeanServer;
+import javax.management.MalformedObjectNameException;
+import javax.management.ObjectName;
+
+import com.example.mbean.PoolGate;
+
+public class Test {
+
+	/**
+	 * @param args
+	 * @throws NullPointerException 
+	 * @throws MalformedObjectNameException 
+	 */
+	public static void main(String[] args) throws MalformedObjectNameException, NullPointerException {
+		MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+		ObjectName name = new ObjectName("com.example.mbeans:type=Pool");
+	    ObjectName mbeanObjectName =
+			ObjectName.getInstance("com.example.mbeans:type=Pool");
+		    mbs.createMBean("com.example.mbean.PoolGate.java", mbeanObjectName);
+
+
+	}
+
+}

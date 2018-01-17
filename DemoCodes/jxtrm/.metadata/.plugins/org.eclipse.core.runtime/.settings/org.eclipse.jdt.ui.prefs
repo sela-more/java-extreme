@@ -1,0 +1,20 @@
+#Mon Dec 08 16:45:48 IST 2008
+content_assist_proposals_foreground=0,0,0
+spelling_locale_initialized=true
+org.eclipse.jdt.ui.text.templates_migrated=true
+useAnnotationsPrefPage=true
+eclipse.preferences.version=1
+org.eclipse.jface.textfont=1|Courier New|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Courier New;
+tabWidthPropagated=true
+org.eclipse.jdt.ui.editor.tab.width=
+fontPropagated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+proposalOrderMigrated=true
+org.eclipse.jdt.ui.formatterprofiles.version=11
+content_assist_proposals_background=255,255,255
+content_assist_number_of_computers=9
+useQuickDiffPrefPage=true
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="cache.CacheMgr$CacheObject"><rhs name\="cache.CacheMgr$CacheObject"/></lhs><lhs name\="java.lang.ref.Reference"><rhs name\="java.lang.ref.SoftReference"/><rhs name\="java.lang.ref.PhantomReference"/><rhs name\="java.lang.ref.WeakReference"/></lhs><lhs name\="java.lang.ref.SoftReference"><rhs name\="java.lang.ref.SoftReference"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs><lhs name\="java.lang.ref.ReferenceQueue"><rhs name\="java.lang.ref.ReferenceQueue"/></lhs><lhs name\="java.lang.ref.PhantomReference"><rhs name\="java.lang.ref.PhantomReference"/></lhs><lhs name\="cache.Cacheable"><rhs name\="cache.Student"/></lhs><lhs name\="cache.Student"><rhs name\="cache.Student"/></lhs><lhs name\="cache.CacheMgr"><rhs name\="cache.CacheMgr"/></lhs><lhs name\="cache.LogMgr"><rhs name\="cache.LogMgr"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.LinkedList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.LinkedList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.LinkedList"/></lhs><lhs name\="java.lang.ref.WeakReference"><rhs name\="java.lang.ref.WeakReference"/></lhs><lhs name\="cache.LogObject"><rhs name\="cache.LogObject"/></lhs><lhs name\="java.lang.Runnable"><rhs name\="java.lang.Thread"/><rhs name\="exchanger.Tester"/></lhs><lhs name\="java.lang.Thread"><rhs name\="java.lang.Thread"/></lhs><lhs name\="exchanger.Exchanger"><rhs name\="exchanger.Exchanger"/></lhs></history>
+org.eclipse.jdt.ui.text.code_templates_migrated=true

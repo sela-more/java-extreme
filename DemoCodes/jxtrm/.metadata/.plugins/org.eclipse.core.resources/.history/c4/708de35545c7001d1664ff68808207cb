@@ -1,0 +1,6 @@
+package threadPool;
+
+public interface IClientManager {
+
+	public void addJob(Job job);
+}

@@ -1,0 +1,21 @@
+public class Reader implements Runnable{
+private Data data;
+private String delimiter;
+private ReadWriteLock locker;
+	public Reader(Data data, String delimiter, ReadWriteLock lock) {
+	this.data = data;
+	this.delimiter = delimiter;
+	locker = lock;
+                 }
+	@Override
+	public void run() {
+	    while (true){
+	    locker.readLock().lock();
+	    System.out.println(delimiter + "s");
+	    Thread.yield();
+	    System.out.println(data.getData());
+	    System.out.println(delimiter + "e");
+	    locker.readLock().unlock();
+	{    
+  {    
+{

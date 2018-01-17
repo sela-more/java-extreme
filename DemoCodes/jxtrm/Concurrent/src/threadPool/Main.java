@@ -1,0 +1,43 @@
+package threadPool;
+
+public class Main
+{
+    private static int m_nWorkers;  
+    public static void main(String args[])
+    {
+     if (args.length !=1)
+     {
+      System.err.println("Number of Cable Guys required");
+      System.exit(1);
+      }
+      m_nWorkers = Integer.parseInt(args[0]);
+      Main m = new Main(m_nWorkers); 
+    }
+    public Main(int nGuys)
+    {
+        Manager manager = new Manager(m_nWorkers);
+        try {
+        	manager.addJob(new InstallCables());
+			Thread.sleep(10);
+	        manager.addJob(new InstallCables());
+	        Thread.sleep(10);
+	        manager.addJob(new InstallCables());
+	        Thread.sleep(50);
+	        manager.addJob(new FixCables());
+	        Thread.sleep(10);
+	        manager.addJob(new InstallCables()); 
+	        Thread.sleep(10);
+	        manager.addJob(new InstallCables());
+	        Thread.sleep(10);
+	        manager.addJob(new InstallCables());
+	        Thread.sleep(10);
+	        manager.addJob(new FixCables());
+	        manager.terminated();
+
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+}
+

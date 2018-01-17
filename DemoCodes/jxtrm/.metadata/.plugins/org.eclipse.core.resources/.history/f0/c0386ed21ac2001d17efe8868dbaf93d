@@ -1,0 +1,14 @@
+package cache;
+
+import java.lang.ref.SoftReference;
+import java.util.LinkedList;
+
+public class CacheMgr {
+
+	TreeSet<SoftReference<Student>> cache;
+	
+	public void f(){
+		cache.
+	}
+	
+}

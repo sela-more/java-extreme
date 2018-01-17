@@ -1,0 +1,20 @@
+package ExecutorService;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Mgr {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		List<Task> tasks = new ArrayList<Task>();
+		tasks.add(new Task(5,8));
+		tasks.add(new Task(7,9));
+		tasks.add(new Task(13,11));
+		tasks.add(new Task(10,2));
+
+	}
+
+}

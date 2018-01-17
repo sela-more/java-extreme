@@ -1,0 +1,21 @@
+import java.io.*;
+public class Animal implements Serializable
+{
+   String myName;
+   private String type;
+
+   Animal(String newName, String animalType) {
+	myName=newName;
+	type = animalType;
+   }
+
+   public static void main(String args[]) {
+   Animal shraga = new Animal("Shraga“, “Duck”);
+   try{
+	serializeAnimal(shraga);
+   } catch(IOException io) {
+	 io.printStackTrace();
+   } catch (ClassNotFoundException e) {
+	e.printStackTrace();
+   }
+}

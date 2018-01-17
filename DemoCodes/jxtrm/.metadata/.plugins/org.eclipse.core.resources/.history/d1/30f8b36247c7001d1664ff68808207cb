@@ -1,0 +1,22 @@
+package ExecutorService;
+
+public class Result {
+
+	double answer;
+	int modulu;
+
+	public Result(int left, int right) {
+		answer = (double)left / right;
+		modulu = left % right;
+		
+	}
+	public double getAnswer() {
+		return answer;
+	}
+
+	public int getLengthOfdigitsAfterPoint() {
+		return modulu;
+	}
+
+}
+

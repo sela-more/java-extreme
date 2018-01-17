@@ -1,0 +1,19 @@
+package jmx;
+
+import javax.management.ObjectName;
+
+public class Test {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ObjectName name = new ObjectName("com.example.mbeans:type=Pool");
+	    ObjectName mbeanObjectName =
+			ObjectName.getInstance("com.example.mbeans:type=Pool");
+		    mbs.createMBean(mbeanClassName, mbeanObjectName);
+
+
+	}
+
+}

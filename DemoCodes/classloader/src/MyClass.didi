@@ -1,0 +1,10 @@
+public class MyClass
+{
+	static {
+		System.out.println("My class was loaded");
+	}
+	public MyClass()
+	{
+		System.out.println("In my class CTor");
+	}
+}

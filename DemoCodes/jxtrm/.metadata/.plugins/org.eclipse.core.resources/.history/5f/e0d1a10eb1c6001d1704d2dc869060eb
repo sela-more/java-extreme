@@ -1,0 +1,32 @@
+package threadPool;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+class Manager implements IClientManager
+{
+    private ThreadPoolExecutor m_Workers     = null;
+ 
+    public Manager(int workers)
+    {
+        m_Workers = new ThreadPoolExecutor(workers, workers, 0,TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2));
+   }
+ 
+     public Manager()
+    {
+    	 this(5);
+    }
+
+      //implemantion of IManager 
+     public void addJob(Job job)
+     {
+    	 m_Workers.execute(job);
+     }
+     
+  
+     public void work(String jobStr)
+     {
+         System.out.println(jobStr);
+     } 
+ }

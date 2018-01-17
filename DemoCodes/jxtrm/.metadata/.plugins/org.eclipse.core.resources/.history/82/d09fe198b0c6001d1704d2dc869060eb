@@ -1,0 +1,50 @@
+package threadPool;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+
+class Manager implements IManagerToWorker,IClientManager
+{
+    private ThreadPoolExecutor m_Workers     = null;
+    private int m_nNumOfWorkers;
+ 
+    public Manager(int workers)
+    {
+        
+       try {
+			createWorkers();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+    }
+ 
+     public Manager()
+    {
+    	 this(5);
+    }
+
+     public void createWorkers() throws InterruptedException
+     {
+    	 m_Workers = new ThreadPoolExecutor(workers, workers, 0,null, new ArrayBlockingQueue<Runnable>(2));
+     } 
+      //implemantion of IManager 
+     public void addJob(Job job)
+     {
+    	 m_Workers.execute(job);
+     }
+     
+     public Job getJob()
+     {
+         synchronized(m_Workers)
+         {
+             return m_Jobs.getJob();
+         }
+     }
+  
+     public void work(String jobStr)
+     {
+         System.out.println(jobStr);
+     } 
+ }

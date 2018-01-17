@@ -1,0 +1,29 @@
+package threadPool;
+
+public class Main
+{
+    private static int m_nWorkers;  
+    public static void main(String args[])
+    {
+     if (args.length !=1)
+     {
+      System.err.println("Number of Cable Guys required");
+      System.exit(1);
+      }
+      m_nWorkers = Integer.parseInt(args[0]);
+      Main m = new Main(m_nWorkers); 
+    }
+    public Main(int nGuys)
+    {
+        Manager manager = new Manager(m_nWorkers);
+        manager.addJob(new FixCables());
+        manager.addJob(new InstallCables());
+        manager.addJob(new InstallCables());
+        manager.addJob(new FixCables());
+        manager.addJob(new InstallCables());        
+        manager.addJob(new InstallCables());
+        manager.addJob(new InstallCables());
+        manager.addJob(new FixCables());
+    }
+}
+

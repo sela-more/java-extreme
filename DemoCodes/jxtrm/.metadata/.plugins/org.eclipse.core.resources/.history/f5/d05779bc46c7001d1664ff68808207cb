@@ -1,0 +1,24 @@
+package ExecutorService;
+
+public class Result {
+
+	public Result(int left, int right) {
+		answer = left / right;
+		
+	}
+	public int getAnswer() {
+		return answer;
+	}
+	public void setAnswer(int answer) {
+		this.answer = answer;
+	}
+	public int getLengthOfdigitsAfterPoint() {
+		return lengthOfdigitsAfterPoint;
+	}
+	public void setLengthOfdigitsAfterPoint(int lengthOfdigitsAfterPoint) {
+		this.lengthOfdigitsAfterPoint = lengthOfdigitsAfterPoint;
+	}
+	double answer;
+	int lengthOfdigitsAfterPoint;
+}
+

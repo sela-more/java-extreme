@@ -1,0 +1,10 @@
+package cache;
+
+import java.util.List;
+
+public class LogMgr {
+
+	List<LogObject> logger;
+	
+	
+}

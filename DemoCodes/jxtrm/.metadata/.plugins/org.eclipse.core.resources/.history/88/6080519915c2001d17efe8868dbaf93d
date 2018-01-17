@@ -1,0 +1,12 @@
+package cache;
+
+import java.util.List;
+
+public class LogMgr {
+
+	List<LogObject> logger;
+	
+	public Iterator getMessagesIterator(){
+		return logger.iterator();
+	}
+}

@@ -1,0 +1,15 @@
+package cache;
+
+import java.lang.ref.WeakReference;
+
+public class LogObject {
+
+	public String getMessage() {
+		return message;
+	}
+	public WeakReference<Student> getObj() {
+		return obj;
+	}
+	private String message;
+	private WeakReference<Student> obj;
+}

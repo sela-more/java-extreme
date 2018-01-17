@@ -1,0 +1,21 @@
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+
+
+public class ThreadTestChannel implements Runnable{ 
+FileChannel fc;
+public ThreadTestChannel(FileChannel file) {
+fc = file;
+}
+
+public static void main(String[] args) throws IOException, InterruptedException {
+RandomAccessFile raf = new RandomAccessFile ("somefile", "rw");
+FileChannel fc = raf.getChannel( );
+Thread t = new Thread(new ThreadTestChannel(fc));
+t.start();
+t.interrupt();
+Thread.sleep(100);
+System.out.println(fc.isOpen());
+}
+

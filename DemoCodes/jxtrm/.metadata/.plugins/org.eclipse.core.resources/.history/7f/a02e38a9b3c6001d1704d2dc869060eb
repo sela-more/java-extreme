@@ -1,0 +1,5 @@
+package threadPool;
+
+public interface Job extends Runnable{
+	public void execute();
+}

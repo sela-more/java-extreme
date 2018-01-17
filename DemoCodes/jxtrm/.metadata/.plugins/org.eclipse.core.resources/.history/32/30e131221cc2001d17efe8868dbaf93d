@@ -1,0 +1,17 @@
+package cache;
+
+import java.lang.ref.SoftReference;
+import java.util.Map;
+
+public class CacheMgr {
+
+	Map<String, SoftReference<Student>> cache;
+	
+	public void addToCache(Student s){
+		
+	}
+	
+	public Student getFromCache(String name){
+		cache.get(name).get();
+	}
+}

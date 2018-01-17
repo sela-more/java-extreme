@@ -1,0 +1,6 @@
+package cache;
+
+public class CacheMgr {
+
+	List<SoftReference<Student>> cache;
+}

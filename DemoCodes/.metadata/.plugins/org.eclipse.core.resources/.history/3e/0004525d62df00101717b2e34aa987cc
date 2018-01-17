@@ -1,0 +1,38 @@
+import java.lang.ref.Reference;
+import java.lang.ref.ReferenceQueue;
+import java.util.IdentityHashMap;
+
+public class GraphPool {
+
+	private ReferenceQueue<PooledGraph> _refQueue = new ReferenceQueue<PooledGraph>();
+	private IdentityHashMap<Reference<PooledGraph>,GraphImpl> ref2Graph 
+    = new IdentityHashMap<Reference<PooledGraph>,GraphImpl>();
+
+private IdentityHashMap<GraphImpl,Reference<PooledGraph>> graph2Ref = 
+    new IdentityHashMap<GraphImpl,Reference<PooledGraph>>();
+
+	private int graphCounter = 5;
+	public Graph getGraph(PooledGraph p) {
+		while (true){
+			if (graphCounter > 0){
+				return getGraphFromDB(p);
+			}else{
+				try{
+					Reference<PooledGraph> ref =
+                    (Reference<PooledGraph>) _refQueue.remove(100);
+                if (ref != null){
+                    deleteGraph(ref);
+                }else{
+                	System.gc();
+                }
+            }
+            catch (InterruptedException ignored)
+            {
+                // this could be used to shut down pool
+            }}
+	}
+}
+private void deleteGraph(Reference<PooledGraph> ref) {
+	deleteGraph(ref2Graph.get(ref));
+
+}

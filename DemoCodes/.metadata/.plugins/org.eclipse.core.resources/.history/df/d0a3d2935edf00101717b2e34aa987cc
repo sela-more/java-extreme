@@ -1,0 +1,28 @@
+import java.util.Hashtable;
+import java.io.FileInputStream;
+ 
+class MyClassLoader extends ClassLoader
+{
+	private Hashtable m_Classes;
+	//The super ctor is protected
+	public MyClassLoader() 
+	{
+		m_Classes = new Hashtable();
+	} 
+	
+	byte[] getMyClass(String sClassName)
+	{
+		 System.out.println("Loading Class...");
+		 byte bResult[] = null;
+	    try {
+		   FileInputStream fis = new
+	                FileInputStream(sClassName + ".didi");
+		   bResult = new byte[fis.available()];
+		   fis.read(bResult);
+		 }
+		 catch(Exception e) //any exception {	
+		   System.err.println("Error loading class!");
+	  	   bResult = null;	
+	  }
+		return bResult;		
+	}

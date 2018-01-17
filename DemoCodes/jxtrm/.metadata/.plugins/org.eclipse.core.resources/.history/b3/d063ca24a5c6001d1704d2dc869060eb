@@ -1,0 +1,30 @@
+package threadPool;
+
+import java.util.concurrent.Callable;
+
+public class Worker implements Callable<Job>
+{
+  private IManagerToWorker m_Manager = null;
+  private static int m_nWorkerCounter;
+  private int m_nWorkerID;
+ 
+  public Worker(IManagerToWorker manager,Object container)
+    {
+        m_Manager  = manager;
+        m_container = container;
+    }
+ 
+  public void run()
+    {
+          }
+
+  @Override
+  public Job call() throws Exception {
+      m_nWorkerID = ++m_nWorkerCounter;
+      Job job = m_Manager.getJob();
+      System.out.println("Cable Guy No #" + m_nWorkerID +"is working");
+      job.execute();
+      return job;
+  }
+}
+

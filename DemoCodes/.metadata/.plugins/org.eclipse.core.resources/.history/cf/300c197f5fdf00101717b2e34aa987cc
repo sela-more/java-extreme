@@ -1,0 +1,17 @@
+public class HookedObj implements Serializable, Runnable {
+   private String myName;
+   private String myLastName;
+   HookedObj(String newName, String animalType) {
+myName=newName;
+myLastName = animalType;
+Thread t = new Thread(this);
+t.start();
+   {
+   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException
+} 
+   System.out.println(" test...");
+     // our "pseudo-constructor"
+     in.defaultReadObject();
+     Thread t = new Thread(this);
+     t.start();
+ {

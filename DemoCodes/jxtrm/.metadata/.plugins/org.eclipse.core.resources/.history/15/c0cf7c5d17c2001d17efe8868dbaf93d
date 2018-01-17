@@ -1,0 +1,9 @@
+package cache;
+
+import java.lang.ref.SoftReference;
+import java.util.List;
+
+public class CacheMgr {
+
+	List<SoftReference<Student>> cache;
+}

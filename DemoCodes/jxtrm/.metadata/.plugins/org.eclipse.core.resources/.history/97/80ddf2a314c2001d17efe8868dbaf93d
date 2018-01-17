@@ -1,0 +1,12 @@
+package cache;
+
+import java.lang.ref.WeakReference;
+import java.util.List;
+import java.util.Map;
+
+public class LogMgr {
+
+	List<LogObject> logger;
+	
+	public 
+}

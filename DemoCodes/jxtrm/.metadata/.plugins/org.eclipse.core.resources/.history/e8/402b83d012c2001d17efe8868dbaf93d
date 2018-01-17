@@ -1,0 +1,8 @@
+package cache;
+
+import java.lang.ref.WeakReference;
+
+public class LogMgr {
+
+	Set<WeakReference<student>> logger;
+}

@@ -1,0 +1,21 @@
+import java.io.Externalizable;
+
+public class MyObj implements Externalizable {
+
+String msg = "stam";
+/**
+ * @param args
+ */
+public static void main(String[] args) {
+String filename = "time.ser"; 
+MyObj obj = null;
+FileOutputStream fos = null;
+ObjectOutputStream out = null;
+try
+{
+fos = new FileOutputStream(filename);
+    out = new ObjectOutputStream(fos);
+    out.writeObject(new MyObj());
+    out.close();
+}catch (IOException e)}
+}

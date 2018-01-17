@@ -1,0 +1,24 @@
+package threadPool;
+
+import java.util.*;
+
+public class JobContainer extends LinkedList
+{
+ 
+	public void addJob(Job job)
+	{
+		add(job);
+	}
+	public Job getJob()
+	{
+	    if (size()!=0)
+	    {
+	        Job lastJob = (Job)getLast();
+	        remove(lastJob);
+		    return lastJob;
+		}
+		return null;
+	}
+ 
+}
+

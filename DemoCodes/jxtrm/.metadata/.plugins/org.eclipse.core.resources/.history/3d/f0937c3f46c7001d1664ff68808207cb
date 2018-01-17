@@ -1,0 +1,7 @@
+package ExecutorService;
+
+public class Result {
+
+	int answer;
+	int lengthOfdigitsAfterPoint;
+}
